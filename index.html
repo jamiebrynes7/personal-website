@@ -9,7 +9,11 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS definitions -->
+    <link href="css/custom.css" rel="stylesheet">
 
+    <!-- Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -18,6 +22,55 @@
     <![endif]-->
   </head>
   <body>
+
+    <header id="header-style">
+      <!-- This section for title banner + picture -->
+      <div class="container">
+        <div class="row">
+          <img id ="portrait" src="assets/portrait-picture.jpg">
+        </div>
+        <div class="row">
+          <h1 id="header-text">Jamieson Brynes</h1>
+        </div>
+        <div class="row">
+          <p id="header-text">engineer + developer + scientist</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navbar: collapsable for small, normal for larger-->
+    <nav class="navbar navbar-style">
+      <div class="container" id="nav-container">
+        <div class="nav-wrapper">
+          <ul class="navbar-list center">
+            <li class = "navbar-item">
+              <p>home</p>
+            </li>
+            <li class="navbar-separator"><p>|</p></li>
+            <li class = "navbar-item">
+              <p>about me</p>
+            </li>
+            <li class="navbar-separator"><p>|</p></li>
+            <li class = "navbar-item">
+              <p>resume</p>
+            </li>
+            <li class="navbar-separator"><p>|</p></li>
+            <li class = "navbar-item">
+              <p>blog</p>
+            </li>
+            <li class="navbar-separator"><p>|</p></li>
+            <li class = "navbar-item">
+              <p>contact me</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="navbar-sm navbar-style">
+      <p>Test</p>
+    </nav>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
