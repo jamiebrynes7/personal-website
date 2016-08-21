@@ -5,6 +5,31 @@
 .navbar-style {
   background-color: #3498DB;
   color: white;
+  width:100%;
+}
+
+.footer-style {
+  background-color: #3498D8;
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.empty-divider {
+  background-color: rgba(0,0,0,0);
+  padding: 10px 0;
+}
+
+.empty-divider-sm{
+  background-color: rgba(0,0,0,0);
+  padding: 5px 0;
+}
+
+.footer-content{
+  color:white;
+  text-align: center;
+  padding: 15px 0;
 }
 
 .navbar-sm {
