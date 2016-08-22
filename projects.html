@@ -91,7 +91,7 @@
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-md-8 col-md-offset-2 col-xs-12">
+          <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
 
             <div class="row">
               <h1 class="section-title text-centered">projects</h1>
@@ -99,15 +99,32 @@
             </div>
 
             <div class="row">
-            <h3 class="section-title text-centered" id="analysis-smartphone-data">Analysis of Activity Data from Smartphones</h3>
-            <div class="hline"></div>
-            <p class="content">This project is my fourth-year design project at University of Oxford. The goal of the project is to create a software module that will harness the signals (acceleromter, gyroscope, etc) coming from a generic smartphone (Android,iOS) to provide high-accuracy physical activity markers. The algorithms that will operate on the signal data must be: robust enough to deal with different possible sets of signals, efficient enough to run on a mobile device without significant power consumption or runtime, and powerful enough to give accurate activity markers.</p>
-            <p class="content">Currently, an <a href="https://bitbucket.org/jamiebrynes7/4yp-data-collection">Android app</a> has been written to collect sensor data from the smartphone and email this data back to myself. In my Gmail inbox, there is a script running that will scrape the data from the email, formats it to a .csv file and deposits this file in my Google Drive.</p>
-            <p class="content">This space will be updated as further progress is made.</p>
-          </div>
-            <div class="row">
-            <h3 class="section-title text-centered" id="optical-nanofabrication">Optical Nanofabrication</h3>
-            <div class="hline"></div>
+              <h3 class="section-title text-centered" id="analysis-smartphone-data">Analysis of Activity Data from Smartphones</h3>
+              <div class="hline"></div>
+              <p class="content">This project is my fourth-year design project at the University of Oxford. The goal of the project is to create a software module that will harness the signals (acceleromter, gyroscope, etc) coming from a generic smartphone (Android,iOS) to provide high-accuracy physical activity markers. The algorithms that will operate on the signal data must be: robust enough to deal with different possible sets of signals, efficient enough to run on a mobile device without significant power consumption or runtime, and powerful enough to give accurate activity markers.</p>
+              <p class="content">Currently, an <a href="https://bitbucket.org/jamiebrynes7/4yp-data-collection">Android app</a> has been written to collect sensor data from the smartphone and email this data back to myself. In my Gmail inbox, there is a script running that will scrape the data from the email, formats it to a .csv file and deposits this file in my Google Drive.</p>
+              <p class="content">This space will be updated as further progress is made.</p>
+              <p class="language-list">Java, Coffeescript</p>
+            </div>
+            <div class="row project">
+              <h3 class="section-title text-centered" id="optical-nanofabrication">Optical Nanofabrication</h3>
+              <div class="hline"></div>
+              <p class="content">This project is my third-year group design project at the University of Oxford. The design brief was open ended: design a optical nanofabrication facility that can fabricate a variety of objects with a sub-micron resolution. The techniques that we used, or how we defined "a variety of objects" was left to us to decide based on a potential consumer's needs. With this in mind, we designed a facility that could fabricate down to a 55nm resolution with maximum object sizes reaching 8cm x 8cm x 8cm. The facility could operate on a variety of materials including polymers, metals, glass, and ceramics. </p>
+              <p class="content">We selected the following optical fabrication techniques: Laser Micro-Machining, Stereolithography, Two-Photon Polyermisation, and STED Lithography. We also included the following imaging techniques so the consumer can view their nano-scale object: Confocal Microscopy, Two-Photon Microscopy, and STED Imaging as well as including the capability for rudimentary manipulation of the fabricated objects with Optical Tweezing.</p>
+              <div class="read_more_btn btn">
+                <a href="#optical-nanofabrication" class="read_more">Read More</a>
+              </div>
+              <span class="more_text">
+                <p class="content">My role in the project was initially to research the Stereolithography technique and determine the pros/cons of this technique. The bulk of my work was developing the accompanying software suite which was to interpret the user's demands and translate these into control signals for input to the control system. To this end, I developed a way of translating a 3-D model file (.stl) into reference paths for the control system. The software has portions written in both C++ and Matlab.</p>
+                <p class= "content">The initial endeavour was started in C++, and this portion of the program was tasked with taking the 3-D model file, parsing the binary data into data structures (sets of triangles, .stl files are tesselated) and then slicing the model into a finite number of layers (defined as an argument). The program would then write the data to a temporary directory of files. An example of a sliced model can be seen below, in this case a R2-D2 model</p>
+                <img class="img-content" src="assets/projects/3yp-sliced-model.png">
+                <p class="content">To speed up the development time, the next portion of the program was written in Matlab. This part of the program was tasked with taking the layer data and generating the tool paths as well as displaying a GUI to the user. The rationale for using Matlab was to take advantage of Matlab's extensive 2-D manipulation libraries as well as the GUI toolkit and plotting functionality. A display of the GUI can be seen below</p>
+                <img class="img-content" src="assets/projects/3yp-gui.png">
+                <p class="content">The full project report with far greater detail can be found here: <a href="docs/3yp_project_report.pdf">3YP Project Report</a>. The relevant software section begins on page 330.</p>
+                <p class="language-list">C++, Matlab</p>
+                <div class="read_less_btn btn">
+                  <a href="#optical-nanofabrication" class='read_less'>Read Less</a>
+              </span>
           </div>
           </div>
         </div>
@@ -129,5 +146,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/read_more.js"></script>
+    <script src="js/read_less.js"></script>
   </body>
 </html>

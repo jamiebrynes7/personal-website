@@ -118,8 +118,40 @@
   display: none;
 }
 
-.resume-nav-sm-item{
+.resume-nav-sm-item {
   padding-bottom: 10px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.btn{
+  color: #3498D8;
+  border: 1px solid #3498D8;
+  border-radius: 20px;
+  padding: 5px;
+  display:inline-block;
+  float:right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.more_text{
+  display:none;
+}
+
+.language-list{
+  text-align: center;
+  font-style: italic;
+  padding-top: 15px;
+}
+
+.img-content {
+  text-align: center;
+  width:50%;
+  margin: 25px auto;
+  display:block;
 }
 
 
