@@ -3,9 +3,10 @@
 }
 
 .navbar-style {
-  background-color: #3498DB;
+  background-color: #3498D8;
   color: white;
   width:100%;
+  border-radius: 0px;
 }
 
 .footer-style {
@@ -101,7 +102,7 @@
 }
 
 .section-title{
-  color: #3498DB;
+  color: #3498D8;
   padding-top: 30px;
   padding-bottom: 15px;
 }
@@ -202,7 +203,7 @@ tbody th {
 }
 
 #header-style {
-  background-color: #3498DB;
+  background-color: #3498D8;
 }
 
 #nav-container {
