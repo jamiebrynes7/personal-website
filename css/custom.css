@@ -172,6 +172,8 @@ a:hover {
 }
 
 
+
+
 body {
   font-family: Raleway, sans-serif;
 }
@@ -199,6 +201,7 @@ table {
 tbody th {
   font-weight: normal;
 }
+
 #header-text {
 
   text-align: center;
@@ -242,5 +245,9 @@ tbody th {
 
   .resume-nav-sm {
     display: block;
+  }
+
+  .img-content {
+    width: 80%;
   }
 }
