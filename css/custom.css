@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+.blog-post-title {
+  font-size: 18px;
+}
+
+.blog-post {
+  text-align: left;
+}
+
+.blog-post-content {
+  font-size: 12px;
+}
+
 .navbar-style {
   background-color: #3498D8;
   color: white;
