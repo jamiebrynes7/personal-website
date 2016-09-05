@@ -9,6 +9,10 @@
   border-radius: 0px;
 }
 
+.navbar-sel-style {
+  color: #1f6ea1;
+}
+
 .footer-style {
   background-color: #3498D8;
   color: white;
