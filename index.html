@@ -12,6 +12,11 @@
     <!-- Custom CSS definitions -->
     <link href="css/custom.css" rel="stylesheet">
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
     <!-- Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -93,9 +98,22 @@
         <div class="col-md-offset-2 col-md-8">
           <h1 class="section-title">about me</h1>
           <div class="hline"></div>
-          <p class="content">I am a fourth-year student at the University of Oxford studying Engineering Science, with a specialization in electrical, information, and software engineering. I have experience across a variety of domains and programming languages: from simulators written in Python to Matlab GUIs to C++ utilities.</p>
-          <p class="content">I graduate in the summer 2017 and am looking for an entry level position in the software development space.</p>
+          <p class="content">I am a fourth-year student at the University of Oxford studying for an MEng in Engineering Science, with a specialization in electrical, information, and software engineering. I have experience across a variety of domains and programming languages: from simulators written in Python to Matlab GUIs to C++ utilities.</p>
+          <p class="content">I graduate in the summer 2017 and am looking for an graduate level position in the software development space.</p>
           <p class="content">Outside of engineering, I enjoy playing soccer, cooking, and getting wrapped up in a good book.</p>
+          <div class="empty-divider"></div>
+          <!-- Get recent blog posts-->
+          <!--
+          <h1 class="section-title">recent blog posts</h1>
+          <div class="hline"></div>
+          <div id="blogPostsWrapper">Loading...</div>
+          <script type="text/javascript">
+            $.get('/php/wp-latest-blog.php', function (data) {
+              console.log(data);
+              $('#blogPostsWrapper').html(data);
+            });
+          </script>
+        -->
         </div>
       </div>
 
@@ -109,9 +127,6 @@
       </div>
     </footer>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+
   </body>
 </html>
