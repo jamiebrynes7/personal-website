@@ -16,7 +16,7 @@
     <div class="blog-post">
       <div class="row">
         <div class="col-xs-8">
-          <p class="blog-post-title"><?php the_title(); ?></p>
+          <a class="blog-post-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </div>
         <div class="col-xs-4">
           <p class="text-right text-italics"><?php the_time('F jS'); ?>, <?php the_time('Y'); ?></p>
