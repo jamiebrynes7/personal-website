@@ -22,7 +22,7 @@
 }
 
 .navbar-sel-style {
-  color: #1f6ea1;
+  text-decoration: underline;
 }
 
 .footer-style {
@@ -180,8 +180,11 @@ body {
 
 nav a, nav a:hover{
   color: white;
-  text-decoration: none;
   display:block;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 th:first-child {
