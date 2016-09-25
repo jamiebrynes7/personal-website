@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="icon" href="favicon.ico" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Jamie Brynes | Engineer, Developer</title>
@@ -12,11 +14,6 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <!-- Custom CSS definitions -->
     <link href="css/custom.css" rel="stylesheet">
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
 
     <!-- Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -49,16 +46,16 @@
       <div class="container" id="nav-container">
         <div class="nav-wrapper">
           <ul class="navbar-list center">
-            <li class="navbar-item">
-              <a class="navbar-sel-style" href="/">home</a>
+            <li class = "navbar-item">
+              <a href="/">home</a>
             </li>
             <li class="navbar-separator"><p>|</p></li>
-            <li class="navbar-item">
+            <li class = "navbar-item">
               <a href="projects.html">projects</a>
             </li>
             <li class="navbar-separator"><p>|</p></li>
             <li class="navbar-item">
-              <a href="repositories.html">repositories</a>
+              <a class="navbar-sel-style" href="repositories.html">repositories</a>
             </li>
             <li class="navbar-separator"><p>|</p></li>
             <li class = "navbar-item">
@@ -80,13 +77,13 @@
     <nav class="navbar-sm navbar-style">
       <div class="container">
         <div class="row text-center navbar-sm-row">
-          <a class="navbar-sm-item navbar-sel-style" href="/">home</a>
+          <a class="navbar-sm-item" href="/">home</a>
         </div>
         <div class="row text-center navbar-sm-row">
           <a class="navbar-sm-item" href="projects.html">projects</a>
         </div>
         <div class="row text-center navbar-sm-row">
-          <a class="navbar-sm-item" href="repositories.html">repositories</a>
+          <a class="navbar-sm-item navbar-sel-style" href="repositories.html">repositories</a>
         </div>
         <div class="row text-center navbar-sm-row">
           <a class="navbar-sm-item" href="resume.html">résumé</a>
@@ -98,39 +95,32 @@
           <a class="navbar-sm-item" href="contact_me.html">contact me</a>
         </div>
       </div>
-    </nav>
+  </nav>
 
-    <section class="content-container container">
-
+  <section>
+    <div class="container content-container">
       <div class="row content-row">
-        <div class="col-md-offset-2 col-md-8">
-          <h1 class="section-title">about me</h1>
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+          <h1 class="section-title text-centered">repositories</h1>
           <div class="hline"></div>
-          <p class="content">I am a fourth-year student at the University of Oxford studying for an MEng in Engineering Science, with a specialization in electrical, information, and software engineering. I have experience across a variety of domains and programming languages: from simulators written in Python to Matlab GUIs to C++ utilities.</p>
-          <p class="content">I graduate in the summer 2017 and am looking for an graduate level position in the software development space in a innovative and collaborative organization.</p>
-          <!--TODO: ADD MORE HERE-->
-          <p class="content">Outside of engineering, I enjoy playing soccer, cooking, and getting wrapped up in a good book.</p>
-          <div class="empty-divider"></div>
-          <!-- Get recent blog posts-->
-          <h1 class="section-title">recent blog posts</h1>
-          <div class="hline"></div>
-          <div id="blogList">
-            <p>Loading recent blogposts</p>
-            <script src="js/blogposts.js"></script>
-          </div>
+          <div id="github"></div>
         </div>
       </div>
+    </div>
+  </section>
 
-    </section>
-
-    <footer>
-      <div class="container footer-style">
-        <div class="row">
-          <p class="footer-content">Jamie Brynes 2016</p>
-        </div>
+  <footer>
+    <div class="container footer-style">
+      <div class="row">
+        <p class="footer-content">Jamie Brynes 2016</p>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/github.js"></script>
   </body>
 </html>

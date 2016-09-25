@@ -233,7 +233,7 @@ tbody th {
 }
 
 
-@media(max-width: 640px)
+@media(max-width: 800px)
 {
   .navbar {
     display: none;
