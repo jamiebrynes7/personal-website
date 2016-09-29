@@ -6,7 +6,7 @@ jQuery.fn.loadGitHubRepos = function(username) {
     var list = '';
     $(data).each(function(){
       console.log(this.language);
-      list = list + '<p class="content"><a href = "'
+      list = list + '<p class="content"><a target="_blank" rel="noopener" href = "'
       + this.svn_url
       + '"><strong>'
       + this.name
