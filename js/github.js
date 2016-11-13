@@ -2,7 +2,7 @@
 jQuery.fn.loadGitHubRepos = function(username) {
   this.html('<p class="text-centered">Loading GitHub repositories</p>');
   var target = this;
-  $.getJSON('http://api.github.com/users/' + username + '/repos',{},function(data) {
+  $.getJSON('https://api.github.com/users/' + username + '/repos',{},function(data) {
     var list = '';
     $(data).each(function(){
       console.log(this.language);
