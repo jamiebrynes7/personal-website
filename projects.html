@@ -116,14 +116,23 @@
               <div class="row project">
               <h3 class="section-title text-centered" id="analysis-smartphone-data">Analysis of Activity Data from Smartphones</h3>
               <div class="hline"></div>
-              <p class="content">This project is my fourth-year design project at the University of Oxford. The goal of the project is to utilize accelerometers from smartphones and new wearable devices in order to provide tools and support to the medical community. The project takes a two pronged approach that should converge toward the end. The first of these prongs is to develop a step counting algorithm utilizing purely the accelerometry from a generic smartphone device. The second of these prongs is to develop a sleep length and fragmentation algorithm that will be ran on an Apple Watch device. Ultimately, these two algorithms should come together to enable a study on the link between day-to-day activity with the step counter and quality and length of sleep as it relates to poor fitness in general, which could be extended to diagnostic support for people with diseases like heart failure or chronic obstructive pumonary disease.</p>
+              <p class="content">This project is my fourth-year design project at the University of Oxford. The goal of the project is to utilize accelerometers from smartphones and new wearable devices in order to provide tools and support to the medical community. The project takes a two pronged approach that should converge toward the end. The first of these prongs is to develop a step counting algorithm utilizing purely the accelerometry from a generic smartphone device. The second of these prongs is to develop a sleep length and fragmentation algorithm that will be ran on an Apple Watch device.</p>
+              <p class="content"> Ultimately, these two algorithms should come together to enable a study on the link between day-to-day activity with the step counter and quality and length of sleep as it relates to poor fitness in general, which could be extended to diagnostic support for people with diseases like heart failure or chronic obstructive pumonary disease.</p>
               <div class="read_more_btn btn">
                 <a href="#analysis-smartphone-data" class="read_more">Read More</a>
               </div>
               <span class="more_text">
-                <p class="content">The algorithms that will operate on the signal data must be: robust enough to deal with different possible sets of signals, efficient enough to run on a mobile device without significant power consumption or runtime, and powerful enough to give accurate activity markers.</p>
-                <p class="content">Currently, an <a href="https://github.com/4YP/4YP-Data-Collection" target="_blank">Android app</a> has been written to collect a set of sensor data from the smartphone and deposit this data on a web server via HTTP POST.</p>
-                <p class="content">This space will be updated as further progress is made.</p>
+                <p class="content">The algorithms that will operate on the signal data must be: robust enough to deal with noisy signals, efficient enough to run on a mobile device without significant power consumption or runtime, and powerful enough to give accurate activity markers.</p>
+                <p class="content">An <a href="https://git.jamiebrynes.com/4yp/Android-Data-Collection" target="_blank">Android app</a> has been written to collect a set of sensor data from the smartphone and deposit this data on a web server via HTTP POST.</p>
+                <p class="content">Counting steps effectively boils down to detecting the peaks of an accelerometer signal. Every time the heel strikes the ground, it sends a shock of acceleration up the body which gets registered in the accelerometer. An example of an accelerometer signal with steps can be seen below:</p>
+                <a class="fancybox" href="assets/4yp-noisy-accel-signal.png"><img class="img-content" src="assets/4yp-noisy-accel-signal.png"></a>
+                <p class="content">So to detect steps, we merely need to detect peaks. There are a number of algorithms to do so, all of which fit into three main 'categories' as I like to call them</p>
+                <li class="content">
+                  <ul>Time Based Algorithms</ul>
+                  <ul>Frequency Based Algorithms</ul>
+                  <ul>Machine Learning or Classification Algorithms</ul>
+                </li>
+                <p class="content">An example of these algorithms may be: Windowed Peak Detection for a time-series based algorithm, Short Term Fourier Transform for a frequency-based algorithm, and K-Means Clustering algorithm for machine learning/classification. By examining relevant scientific literature and analyzing the performance and complexity of a set of algorithms, I decided on 2 potential candidates to implement and rigorously test: Windowed Peak Detection and Continuous Wavelet Transforms</p>
                 <p class="language-list">Java, PHP</p>
                 <div class="read_less_btn btn">
                   <a href="#optical-nanofabrication" class='read_less'>Read Less</a>
