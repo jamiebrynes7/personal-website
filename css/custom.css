@@ -205,6 +205,10 @@ tbody th {
   font-weight: normal;
 }
 
+li {
+  display: list-item;
+}
+
 #header-text {
 
   text-align: center;
