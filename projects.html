@@ -144,15 +144,22 @@
                   The Windowed Peak Detection algorithm has first been implemented in Python for ease of testing and debugging. I built up Python infrastructure around the algorithm to simulate real time data being produced. The algorithm is made of two components: queues and stages. Data flows from stage to stage in queues. A diagram of this is shown below:</p>
                 <a class="fancybox" href="assets/projects/4yp-wpd-sc-algo.png"><img class="img-content" src="assets/projects/4yp-wpd-sc-algo.png"></a>
                 <p class="content">
-                  There are 5 stages to the algorithm.
-                  <ol>
-                    <li>Data Pre Processing</li>
-                    <li>Data Smoothing</li>
-                    <li>Peak Scoring Functions</li>
-                    <li>Peak Detection</li>
-                    <li>Post Processing</li>
-                  </ol>
+                  There are 5 stages to the algorithm.</p>
+                <ol class="content">
+                  <li>Data Pre Processing</li>
+                  <li>Data Smoothing</li>
+                  <li>Peak Scoring Functions</li>
+                  <li>Peak Detection</li>
+                  <li>Post Processing</li>
+                </ol>
+                <p class="content">
+                  Each of these stages will be discussed in depth on my blog, stay posted for more!</p>
+                <p class="content">
+                  To validate the algorithm's performance, we need to have accurate timestamps for each step in sync with the Android phone's internal time system. To this end, a device has been designed to capture the steps of the user. A simple push button fastened to the bottom of an elastic strap that will be strapped to each of the users shoes. An Arduino will capture the data from the push buttons and broadcast this to the Android phone via Bluetooth Low Energy.
                 </p>
+                <p class="content">
+                  This device will soon be rigorously tested to ensure its validity. 
+                </P>
                 <p class="language-list">Java, PHP</p>
                 <div class="read_less_btn btn">
                   <a href="#analysis-smartphone-data" class='read_less'>Read Less</a>
