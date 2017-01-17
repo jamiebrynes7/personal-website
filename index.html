@@ -304,7 +304,7 @@
 
 
             <div class="resume-section-wrapper">
-            <a class="resume-section-header" data-toggle="collapse" href="#analysis_activity" aria-expanded="false" aria-controls="analysis_activity">Analysis of Activity Data From Smartphones
+              <a class="resume-section-header" data-toggle="collapse" href="#analysis_activity" aria-expanded="false" aria-controls="analysis_activity">Analysis of Activity Data From Smartphones
                 <span class="text-right">
                   <i class="fa fa-plus right"></i>
                   <i class="fa fa-minus right"></i>
@@ -324,7 +324,20 @@
 
                 <p><strong>Step Counting Algorithm</strong></p>
 
-                <p></p>
+                <p>Counting steps effectively boils down to detecting the peaks of the accelerometer signal, these correspond to the heel strikes of the user. Unfortunately, accelerometer data is very noisy and thus requires some processing before we can do the peak detection. An example of a accelerometer trace with steps can be seen below.</p>
+
+                <img class="img-responsive" src="assets/projects/4yp-noisy-accel-signal.png"/>
+
+                <p>There are a number of algorithms for peak detection, these roughly break down into three categories:</p>
+                <ul>
+                  <li class="list-bullets">Time Based Algorithms</li>
+                  <li class="list-bullets">Frequency Based Algorithms</li>
+                  <li class="list-bullets">Machine Learning or Classification Algorithms</li>
+                </ul>
+                
+                <p>By examining relevant scientific literature and analyzing the performance and complexity of a set of algorithms, I decided to pursue and test Windowed Peak Detection as the algorithm of choice.</p>
+
+                <p>The algorithm was initially written in Python for ease of implementation and testing, however, it will later be translated into Java for use on a mobile device. The algorithm works much as an assembly line does, data flows from stage to stage in queues (or conveyor belts!) where at each stage some sort of work is done on them.</p> 
 
               </div>
             </div>
