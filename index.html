@@ -337,7 +337,53 @@
                 
                 <p>By examining relevant scientific literature and analyzing the performance and complexity of a set of algorithms, I decided to pursue and test Windowed Peak Detection as the algorithm of choice.</p>
 
-                <p>The algorithm was initially written in Python for ease of implementation and testing, however, it will later be translated into Java for use on a mobile device. The algorithm works much as an assembly line does, data flows from stage to stage in queues (or conveyor belts!) where at each stage some sort of work is done on them.</p> 
+                <p>The algorithm was initially written in Python for ease of implementation and testing, however, it will later be translated into Java for use on a mobile device. The algorithm works much as an assembly line does, data flows from stage to stage in queues (or conveyor belts!) where at each stage some sort of work is done on them.</p>
+
+                <p>The five stages to the algorithm are as follows:</p>
+                <ol>
+                  <li>Data Pre-Processing</li>
+                  <li>Data Smoothing</li>
+                  <li>Peak Scoring</li>
+                  <li>Peak Detection</li>
+                  <li>Post Processing</li>
+                </ol>
+
+                <p>A detailed description of each of these stages can be found on my blog.</p>
+
+
+                <p><strong>Step Counter Validation</strong></p>
+
+                <p>To validate the algorithm's performance, we need collect some ground truth data along with the accelerometer data. This means that we need an accurate count of how many steps were had in each trace. To this end a device has been designed to capture the timestamps and count of the user's steps during the trace.</p>
+
+                <p>A Bluetooth LowEnergy enabled Arduino board is used as the control center for this operation. The initial device design used push buttons strapped to the bottom of the user's shoes to record steps. However, this device proved to be too fragile for extended use and had problems recording data on certain surfaces.</p>
+
+                <img class="img-responsive" src="assets/projects/4yp-og-device.jpg"/>
+
+                <p>In order to improve the device, the design was swapped to have a pressure sensor on the sole of the shoe instead, and use thresholding to determine a step. This device worked much better in practice with regards to robustness and variety of surfaces.</p>
+
+                <img class="img-responsive" src="assets/projects/4yp-new-device.png"/>
+
+
+                <p><strong>Step Counter Parameter Selection</strong></p>
+
+                <p>The algorithm is heavily parameterized and each stage has a few implementation choices. To decide upon the best combination of parameters and implementation, I needed to exhaustively search the parameter space for the optimal set.</p>
+
+                <p>This would happen in two stages, first a rough search to zone in on areas of high potential, and then a finer search in those areas to yield the close to optimal parameter set.</p>
+
+                <p>Suddenly, we had a computational problem on our hands. In total, there are just over 3000 permutations of parameters for the algorithm. If we want to test every single one of these over a sufficiently large set of data, this would take a long time on a single machine.</p>
+
+                <p>The clear solution was to distribute the load.</p>
+
+                <p>The architecture of the set-up is to have a web server used as a distribution and collection center where workers could get their next set of parameters and return the results. Then we can have any number of worker-clients connect to this web server and run through the algorithm.</p>
+
+                <p>A small web application was developed Python using the Flask framework that provides data in the form of JSON to the worker-client. Google Cloud Compute will be used to spin up 'N' number of workers.</p>
+
+                <p>The full parameter search has not been undergone at the time of writing, a more complete data set is necessary before optimization can occur</p>
+
+
+                <p><strong>Sleep Onset and Fragmentation Detector</strong></p>
+
+                <p>This part of the project is still in the research phase. However, check back here for regular updates as development gets underway</p>
 
               </div>
             </div>
