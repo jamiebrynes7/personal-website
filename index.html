@@ -21,6 +21,8 @@
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
 
+  <link rel="icon" href="favicon.ico">
+
 </head>
 
 <body>
@@ -51,7 +53,7 @@
             <a class="nav-link" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#repos">Repositories</a>
+            <a class="nav-link" href="https://git.jamiebrynes.com/root">Repositories</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://blog.jamiebrynes.com">Blog</a>
@@ -310,7 +312,7 @@
                   <i class="fa fa-minus right"></i>
                 </span>
               </a>
-              <p class="text-italics">Adventures in real time signal processing!</p> 
+              <p class="text-italics">Adventures in real time signal processing! <span class="right">October 2016 - Present</span></p> 
               <div class="collapse" id="analysis_activity">
                 <br>
                 <p><strong>Overview</strong></p>
@@ -359,9 +361,9 @@
 
                 <img class="img-responsive" src="assets/projects/4yp-og-device.jpg"/>
 
-                <p>In order to improve the device, the design was swapped to have a pressure sensor on the sole of the shoe instead, and use thresholding to determine a step. This device worked much better in practice with regards to robustness and variety of surfaces.</p>
+                <p>In order to improve the device, the design was swapped to use velostat as a pressure sensor on the sole of the shoe instead, and use thresholding to determine a step. This device worked much better in practice with regards to robustness and variety of surfaces.</p>
 
-                <img class="img-responsive" src="assets/projects/4yp-new-device.png"/>
+                <img class="img-responsive" src="assets/projects/4yp-new-device.jpg"/>
 
 
                 <p><strong>Step Counter Parameter Selection</strong></p>
@@ -398,18 +400,79 @@
                   <i class="fa fa-minus right"></i>
                 </span>
               </a>
-              <p class="text-italics">Fabrication beyond the capabilities of the human eye!</p>
+              <p class="text-italics">Fabrication beyond the capabilities of the human eye!<span class="right">October 2015 - June 2016</span></p>
               <div class="collapse" id="optical_fab">
                 <br>
+                <p><strong>Overview</strong></p>
+
+                <p>This project is my third-year group design project at the University of Oxford. The goal of the project was broad: design an optical nano-fabrication facility that could be used for a variety of applications.</p>
+
+                <p>This broadly broke down into 3 main areas of focus: Fabrication, Imaging, and Control/Software.</p>
+
+                <p>I initially did some research into a fabrication technique called stereolithography. This technique involves using the energy of a laser to polymerize liquid resin into a solid structure. This is a common technique used in 3-D printers that has been around since the 1970s. We decided to include this technique as a large scale first stage fabrication. The idea being, that you would fabricate large macro-structures with stereolithography and then do smaller, finer details with another technique like 2-photon polyermization or STED lithography.</p>
+
+                <p>After the selection of the techniques were complete, I pivoted to the software side and started to develop a small software suite to accompany the facility to allow users to easily fabricate objects. The main goal of this software suite was to convert a 3-D object model (in .stl format) into a series of instructions for the control system to follow to fabricate the objects.</p>
+
+                <p>Since this was a design exercise rather than a build exercise I focused mainly on breaking down the 3-D object into build lines for the fabrication to follow (since the fabrication process was layered). The switching between techniques, loading of material, etc was assumed.</p>
+
+                <p>This process consists of three main stages:</p>
+                <ul>
+                  <li class="list-bullets">Object Slicing</li>
+                  <li class="list-bullets">Resolution Separation</li>
+                  <li class="list-bullets">Laser Path Generation</li>
+                </ul>
+
+                <p><strong>Object Slicing</strong></p>
+
+                <p>This stage of the process is designed to split the 3-D model object into discrete slices corresponding to the fabrication layers. In effect, this is taking the 3-D object file and repeatedly calculating the intersection between the object and a plane.</p>
+
+                <p>The main challenge is that th 3-D object file is tesselated, that is to say, it is described by a triangular surface mesh. So for each plane, we must calculate the intersection points of each triangle with the plane. This is relatively expensive, although some optimizations can be made with height bounding to cut down the search space.</p>
+
+                <p>After the set of intersection points was calculated, the points had to be interpolated together. Each intersection with a triangle yielded a line segment, so it was stiching together the line segments in order. Note that sometimes we had more than one closed contour for each slice, so we have a set of contours describing the intersection.</p>
+
+                <p>The final part of the process was to indicate whether a given contour was defining an outer edge or an inner edge. This was done in relative fashion, noting that if any point of a contour lies inside another, then we known that contour is fully inside.</p>
+
+                <p>At the end of the process, we have a sets of contours describing the intersection for each layer, with each contour classified as inner or outer. An example of a sliced R2-D2 model is shown below, with the layers reconstructed into the full object. Blue contours indicate outer contours, red contours indicate inner contours.</p>
+
+                <img class="img-responsive" src="assets/projects/3yp-sliced-model.png"/>
+
+                <p><strong>Resolution Separation</strong></p>
+
+                <p>The next stage in the process was to take each layer and separate the areas of fabrication into high-resolution and low-resolution. The main insight here is to recognize that all the high resolution data is near the edge of the model, the interior can be considered as a large contiguous box of low-resolution area.</p>
+
+                <p>So now the problem becomes much more simple, we merely need to define a boundary that is some distance 'inward' from the edge (inward here meaning toward the object vs empty space) and smooth this boundary out. Luckily, the action of moving the edge inward will actually smooth out the edge too! So we shrink outer contours and expand inner contours and resolve any conflicts in the new boundaries.</p>
+
+                <p>This is a very simple way of separating resolutions as demonstrated below with a 3-D printer test object.</p>
+
+                <img class="img-responsive" src="assets/projects/3yp-res-sep.png"/>
+
+                <p><strong>Laser Path Generation</strong></p>
+
+                <p>The final stage in the process is to generate the laser paths for each process for each layer. This is quite simple to do, simply create a line across the layer in some direction, calculate the intersection points, then shift the line in a perpendicular direction and repeat. This gives a set of paths to follow that should result in the laser paths assuming a certain polyermization width.</p>
+
+                <p>An example of this is shown below with the 3-D printer test object. Note that the red areas are actually lines of very high density.</p>
+
+                <img class="img-responsive" src="assets/projects/3yp-path-gen.png"/>
                 
               </div>
             </div>
             <div class="resume-break"></div>
 
-
-
           </div>
 
+        </div>
+
+        <div class="row" id="contact">
+
+          <div class="col-md-12">
+
+            <h2 class="section-title">Contact Me</h2>
+
+            <div class="resume-section-wrapper">
+              <p>Please feel free to email me at either: <a href="mailto:jamiebrynes7@gmail.com">jamiebrynes7@gmail.com</a> or <a href="mailto:jamieson.brynes@some.ox.ac.uk">jamieson.brynes@some.ox.ac.uk</a></p>
+            </div>
+
+          </div>
 
 
         </div>
