@@ -1,16 +1,14 @@
 html,body
 {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden!important; 
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden!important; 
 }
 
 
-#download-resume {
-	margin-top: 30px;
-}
+
 
 a[aria-expanded=true] .fa-plus {
 	display: None;
@@ -30,8 +28,9 @@ body {
 }
 
 .list-bullets {
-	list-style: circle;
+	list-style: disc;
 	list-style-position: inside;
+	text-indent: -1em;
 }
 
 
@@ -49,8 +48,10 @@ body {
 }
 
 .section-title {
-	margin-top: 30px;
-	margin-bottom: 30px;
+	margin-top: 60px;
+	margin-bottom: 40px;
+	text-transform: None;
+	text-align: center;
 }
 
 .img-responsive {
@@ -209,7 +210,133 @@ body {
 
 }
 
+.download-resume {
+	text-align: center;
+	margin-top: 40px;
+}
 
+.download-resume a {
+	color: white;
+}
+
+.resume-btn {
+	margin: 20px 20px 40px 30px;
+}
+
+.timeline{
+	position: relative;
+}
+
+.timeline .timeline-inner {
+	position: relative;
+}
+
+.timeline .timeline-bar {
+	content: '';
+	width:4px;
+	opacity: 0.4;
+	margin-left: -2px;
+	position: absolute;
+	left: 50%;
+	top: 0;
+	height: 100%;
+	background-color: #0275d8;
+}
+
+.timeline-box {
+	width: 100%;
+	color: #757575;
+	font-size: 16px;
+	line-height: 1.5;
+	margin-bottom: 50px;
+	position: relative;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.timeline-box-last {
+	margin-bottom: 0px;
+}
+
+.timeline-box-inner {
+	border-color: #0275d8;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 20px 5%;
+	position: relative;
+	border-width: 0 0 20px 0;
+	border-radius: 10px;
+	border-style: solid;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.timeline-header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.timeline-date {
+	color: #0275d8;
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	line-height: 1;
+}
+
+.timeline-logo {
+	max-width: 30%;
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+.timeline-header h4 {
+	color: #878787;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 15px 0 0 0;
+}
+
+.skill-row {
+	margin: 0px 0px 50px 0px;
+}
+
+.skill-header {
+	padding-top: 20px;
+	padding-bottom: 5px;
+	border-top: 1px solid #DBDBDB;
+}
+
+.skill-header-first {
+	border-top: none;
+}
+
+.skill-bar-bg {
+	position: relative;
+	width: 100%;
+	height: 7px;
+	border-radius: 5px;
+	background-color: #DBDBDB;
+	z-index: 1;
+	margin-right: 20px;
+}
+
+.skill-bar {
+	position: relative;
+	height: 7px;
+	border-radius: 5px;
+	background-color: #0275d8;
+	z-index: 2;
+	margin-right: 20px;
+	margin-top:-7px;
+}
+
+.skill-tag {
+	text-align: center;
+}
 
 ul, li {
 	margin-top: 10px;
@@ -246,10 +373,18 @@ td, th {
 
 	.profile-prop-value {
 		margin-left: 0;
-    	margin-bottom: 15px;
-    	width: 100%;
-    	float: none;
-    	line-height: 1.2;
+		margin-bottom: 15px;
+		width: 100%;
+		float: none;
+		line-height: 1.2;
+	}
+
+	.resume-btn {
+		margin: 15px 20px 15px 20px;
+	}
+
+	.timeline-logo {
+		max-width: 50%;
 	}
 
 
