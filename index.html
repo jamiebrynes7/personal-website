@@ -23,6 +23,8 @@
 
   <link rel="icon" href="favicon.ico">
 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
 </head>
 
 <body>
@@ -58,9 +60,6 @@
           <li class="nav-item">
             <a class="nav-link" href="https://blog.jamiebrynes.com">Blog</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact Me</a>
-          </li>
         </ul>
 
       </div>
@@ -73,26 +72,59 @@
   <!--Home--> 
   <div class="container content-container">
 
-    <div class="row" id="home">
+    <div id="home">
+      <div class="profile">
+        <div class="row">
 
-      <div class="col-md-12">
-
-        <h2 class="section-title">About Me</h2>
-
-        <div class="card">
-          <div class="row">
-            <div class="col-md-4">
-              <img class="img-fluid" src="assets/portrait-picture.jpg"/>
-            </div>
-            <div class="col-md-8 card-block center-block">
-
-              <p class="card-text">I am a fourth-year student at the University of Oxford studying for an MEng in Engineering Science, with a specialization in electrical, information, and software engineering. I have experience across a variety of domains and programming languages: from simulators written in Python to Matlab GUIs to C++ utilities.</p>
-
-              <p class="card-text">Outside of engineering, I enjoy playing soccer, cooking, and getting wrapped up in a good book.</p>
-
-            </div>
+          <div class="col-md-5">
+            <div class="profile-photo">
+              <img class="img-responsive" src="assets/portrait-picture.png"/>
+            </div>            
           </div>
+
+          <div class="col-md-7">
+            <div class="profile-info">
+              <div class="profile-items clearfix">
+
+                <div class="profile-preword">
+                  <span>Hello</span>
+                </div>
+                <br>
+                <br>
+                <h1 class="profile-title"><span>I'm </span>Jamie Brynes</h1>
+                <h2 class="profile-subtitle">Developer and Software Engineer</h2>
+              </div>
+            </div>
+
+            <ul class="profile-list">
+              <li><strong class="profile-prop-title">AGE</strong><span class="profile-prop-value">21</span></li>
+              <li><strong class="profile-prop-title">EMAIL</strong><span class="profile-prop-value">jamiebrynes7@gmail.com</span></li>
+              <li><strong class="profile-prop-title">PHONE</strong><span class="profile-prop-value">+44 074 290 31636</span></li>
+              <li><strong class="profile-prop-title">Location</strong><span class="profile-prop-value">Oxford, UK</span></li>
+            </ul>
+          </div>
+
         </div>
+      </div>
+
+      <div class="profile-social-media">
+        <ul class="social">
+          <li>
+            <a href="https://www.facebook.com/jamie.brynes">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/jamiebrynes7/">
+            <i class="fa fa-instagram"></i>
+            </a>
+          </li> 
+          <li>
+            <a href="https://www.linkedin.com/in/jamiesonbrynes">
+              <i class="fa fa-linkedin"></i>
+            </a>
+          </li> 
+        </ul>
       </div>
 
     </div>
@@ -146,7 +178,7 @@
               </a>
               <div class="collapse in" id="education">
                 <br>
-                
+
                 <strong>University of Oxford</strong><span class="right">October 2013 - Present</span>
                 <br>
                 <span class="text-italics">MEng, Engineering Science, 1st class honors</span><span class="text-italics right">Oxford, UK</span>
@@ -334,7 +366,7 @@
                   <li class="list-bullets">Frequency Based Algorithms</li>
                   <li class="list-bullets">Machine Learning or Classification Algorithms</li>
                 </ul>
-                
+
                 <p>By examining relevant scientific literature and analyzing the performance and complexity of a set of algorithms, I decided to pursue and test Windowed Peak Detection as the algorithm of choice.</p>
 
                 <p>The algorithm was initially written in Python for ease of implementation and testing, however, it will later be translated into Java for use on a mobile device. The algorithm works much as an assembly line does, data flows from stage to stage in queues (or conveyor belts!) where at each stage some sort of work is done on them.</p>
@@ -451,27 +483,12 @@
                 <p>An example of this is shown below with the 3-D printer test object. Note that the red areas are actually lines of very high density.</p>
 
                 <img class="img-responsive" src="assets/projects/3yp-path-gen.png"/>
-                
+
               </div>
             </div>
             <div class="resume-break"></div>
 
           </div>
-
-        </div>
-
-        <div class="row" id="contact">
-
-          <div class="col-md-12">
-
-            <h2 class="section-title">Contact Me</h2>
-
-            <div class="resume-section-wrapper">
-              <p>Please feel free to email me at either: <a href="mailto:jamiebrynes7@gmail.com">jamiebrynes7@gmail.com</a> or <a href="mailto:jamieson.brynes@some.ox.ac.uk">jamieson.brynes@some.ox.ac.uk</a></p>
-            </div>
-
-          </div>
-
 
         </div>
 

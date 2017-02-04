@@ -11,6 +11,11 @@ a[aria-expanded=false] .fa-minus {
 	display: None;
 }
 
+body {
+	font-family: "Open Sans";
+	background-color: #efefef;
+}
+
 .content-container {
 	padding-top: 50px;
 }
@@ -74,6 +79,148 @@ a[aria-expanded=false] .fa-minus {
 	display: inline-block;
 	margin-top: 50px;
 	margin-bottom: 50px;
+}
+
+.strong {
+	font-style: bold;
+}
+
+#home {
+	margin-top: 50px;
+}
+
+.profile {
+	padding: 57px 50px 15px 50px;
+	background-color: white;
+	box-shadow: 0 4px 12px 0 rgba(0,0,0,0.2);
+}
+
+@media (max-width: 767px) {
+	.profile {
+		padding: 30px 20px 15px 20px;
+	}
+
+	.profile-photo {
+		margin: 0 auto 10px auto;
+		text-align: center;
+	}
+
+	.profile-prop-title {
+		width: 100%;
+		float: none;
+		line-height: 1.2;
+		margin-bottom: 3px;
+	}
+
+	.profile-prop-value {
+		margin-left: 0;
+    	margin-bottom: 15px;
+    	width: 100%;
+    	float: none;
+    	line-height: 1.2;
+	}
+}
+
+.profile-info {
+	color: #3d4451;
+	padding-bottom: 25px;
+	margin-bottom: 25px;
+	border-bottom: 1px solid #dedede;
+}
+.profile-items {
+	margin-bottom: 18px;
+}
+
+.profile-photo {
+	margin-bottom: 10px;
+	display: block;
+	max-width: 100%;
+
+}
+
+.profile-preword {
+	float: left;
+	margin-bottom: 10px;
+}
+
+.profile-preword span { 
+	background-color: #0275d8;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.1;
+	display: inline-block;
+	padding: 7px 12px;
+	text-transform: uppercase;
+	position: relative;
+}
+
+.profile-title {
+	font-size: 36px;
+	line-height: 1.1;
+	font-weight: 700;
+	margin-bottom: 5px;
+}
+
+.profile-title span {
+	font-weight: 300;
+}
+
+.profile-subtitle {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.1;
+	margin-bottom: 0;
+}
+
+.profile-prop-title {
+	display: block;
+	width: 120px;
+	float: left;
+	color: #333333;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 20px;
+	text-transform: uppercase;
+
+}
+
+.profile-prop-value {
+	display: block;
+	margin-left: 125px;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 20px;
+	color: #9da0a7;
+}
+
+.profile-social-media {
+	background-color: #0275d8;
+	padding: 15px 0px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.social { 
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+
+.social li {
+	display: inline-block;
+	margin: 5px 40px;
+}
+
+.social li a {
+	color: white;
+	width: 45;
+	height: 45;
+}
+
+.social-media-entry a{
+	color: white;
+
 }
 
 ul, li {
