@@ -114,6 +114,7 @@ body {
 }
 
 .profile {
+	margin-top: 100px;
 	padding: 57px 50px 15px 50px;
 	background-color: white;
 	box-shadow: 0 4px 12px 0 rgba(0,0,0,0.2);
@@ -250,8 +251,23 @@ body {
 	margin-top: 40px;
 }
 
+.download-resume button {
+	background-color: rgba(0,0,0,0);
+	border: 1px solid #cbcdcf;
+	border-radius: 5px;
+	padding: 20px 55px;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.download-resume button:hover {
+	transition: box-shadow 0.25s linear;
+	box-shadow: 0 4px 12px 0 rgba(0,0,0,0.2);
+}
+
 .download-resume a {
-	color: white;
+	color: #3d4451;
 }
 
 .resume-btn {
@@ -331,12 +347,12 @@ body {
 
 .timeline-header h4 {
 	color: #878787;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.1;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 15px 0 0 0;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.1;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 15px 0 0 0;
 }
 
 .skill-last-entry {
@@ -353,6 +369,7 @@ body {
 @media (max-width: 767px) {
 	.profile {
 		padding: 30px 20px 15px 20px;
+		margin-top: 30px;
 	}
 
 	.profile-photo {
