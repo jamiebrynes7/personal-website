@@ -343,10 +343,11 @@ body {
 	border-width: 0px;
 }
 
-.no-border {
-	border-width: 0px;
+.honors-row {
+	margin: 0px 10px;
+	padding: 20px 0px;
+	border-bottom: 1px solid #DBDBDB;
 }
-
 
 
 @media (max-width: 767px) {
@@ -383,4 +384,8 @@ body {
 	}
 
 
+}
+
+.no-border {
+	border-width: 0px;
 }
