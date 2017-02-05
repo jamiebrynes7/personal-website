@@ -126,7 +126,17 @@ body {
 
 .profile-preword {
 	float: left;
-	margin-bottom: 10px;
+
+}
+
+.profile-triangle-bottom {
+	float: left;
+	width: 0px;
+	height: 0px;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #0275d8;
+	clear: both;
+	margin-left: 7px;
 }
 
 .profile-preword span { 
@@ -195,14 +205,25 @@ body {
 
 .social li {
 	display: inline-block;
+}
+
+.social-circle {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
 	margin: 5px 40px;
+}
+
+.social-circle:hover {
+	transition: background-color 1s ease;
+	background-color: rgba(0,0,0,0.2);
 }
 
 .social li a {
 	color: white;
-	width: 45;
-	height: 45;
 	transition: transition, background-color 0.25s linear 0s;
+	vertical-align: middle;
+	line-height: 45px;
 }
 
 .social-media-entry a{
@@ -265,7 +286,7 @@ body {
 	padding: 20px 5%;
 	position: relative;
 	border-width: 0 0 20px 0;
-	border-radius: 10px;
+	border-radius: 5px;
 	border-style: solid;
 	background-color: white;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
