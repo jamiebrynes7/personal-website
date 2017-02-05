@@ -77,6 +77,9 @@ h1 {
 	background-color: transparent!important;
 }
 
+.navbar ul {
+	margin-top: 0px;
+}
 
 
 .content-container {
