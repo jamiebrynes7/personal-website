@@ -7,7 +7,21 @@ html,body
 	overflow-x: hidden!important; 
 }
 
+ul, li {
+	margin-top: 10px;
+}
 
+table {
+	width: 100%;
+}
+
+tr {
+	border-bottom: 1px solid #DBDBDB;
+}
+
+td, th {
+	padding: 15px 12px;
+}
 
 
 a[aria-expanded=true] .fa-plus {
@@ -285,11 +299,15 @@ body {
 	margin-right: 0px;
 	padding: 20px 5%;
 	position: relative;
-	border-width: 20px 0 0px 0;
-	border-radius: 5px;
+	border-width: 5px 0 0px 0;
+	border-radius: 0px;
 	border-style: solid;
 	background-color: white;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.timeline tbody th {
+	font-weight: 300;
 }
 
 .timeline-header {
@@ -321,59 +339,15 @@ body {
     margin: 15px 0 0 0;
 }
 
-.skill-row {
-	margin: 0px 0px 50px 0px;
+.skill-last-entry {
+	border-width: 0px;
 }
 
-.skill-header {
-	padding-top: 20px;
-	padding-bottom: 5px;
-	border-top: 1px solid #DBDBDB;
+.no-border {
+	border-width: 0px;
 }
 
-.skill-header-first {
-	border-top: none;
-}
 
-.skill-bar-bg {
-	position: relative;
-	width: 100%;
-	height: 7px;
-	border-radius: 5px;
-	background-color: #DBDBDB;
-	z-index: 1;
-	margin-right: 20px;
-}
-
-.skill-bar {
-	position: relative;
-	height: 7px;
-	border-radius: 5px;
-	background-color: #0275d8;
-	z-index: 2;
-	margin-right: 20px;
-	margin-top:-7px;
-}
-
-.skill-tag {
-	text-align: center;
-}
-
-ul, li {
-	margin-top: 10px;
-}
-
-table {
-	width: 100%;
-}
-
-tr {
-	border-bottom: 1px solid #DBDBDB;
-}
-
-td, th {
-	padding: 15px 12px;
-}
 
 @media (max-width: 767px) {
 	.profile {
