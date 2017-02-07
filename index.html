@@ -29,45 +29,51 @@
 
 <body>
 
-  <!--Navbar-->
-  <nav class="navbar navbar-fixed-top navbar-dark bg-primary animated fadeIn">
+  <div class="header">
 
-    <!-- Collapse button-->
-    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx2">
-      <i class="fa fa-bars"></i>
-    </button>
+    <div class="head-bg"></div>
 
-    <div class="container">
+    <!--Navbar-->
+    <nav class="navbar navbar-fixed-top navbar-dark nav-color animated fadeIn">
 
-      <!--Collapse content-->
-      <div class="collapse navbar-toggleable-xs" id="collapseEx2">
-        <!--Navbar Brand-->
-        <a class="navbar-brand">Jamie Brynes</a>
-        <!--Links-->
-        <ul class="nav navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#resume">Resume</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://git.jamiebrynes.com/root">Repositories</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://blog.jamiebrynes.com">Blog</a>
-          </li>
-        </ul>
+      <!-- Collapse button-->
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx2">
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="container">
+
+        <!--Collapse content-->
+        <div class="collapse navbar-toggleable-xs" id="collapseEx2">
+          <!--Navbar Brand-->
+          <a class="navbar-brand"><span class="navbar-label">JB</span></a>
+          <!--Links-->
+          <ul class="nav navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#resume">Resume</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://git.jamiebrynes.com/root">Repositories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://blog.jamiebrynes.com">Blog</a>
+            </li>
+          </ul>
+
+        </div>
 
       </div>
 
-    </div>
+    </nav>
+    <!--/.Navbar-->
 
-  </nav>
-  <!--/.Navbar-->
+  </div>
   
   <!--Home--> 
   <div class="container content-container animated fadeInUp">
@@ -352,185 +358,210 @@
 
       <div class="row" id="projects">
 
+
         <div class="col-md-12">
-          <h2 class="section-title">Projects</h2>
+          <div class="row">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="col-xs-12 col-md-10 offset-md-1">
+
+              <div class="project">
+                <div>
+                  <img class="project-image" src="assets/projects/4yp_header_image.png"
+                </div>
+
+                <div class="project-body">
+                  <div class="project-title">
+                    Analysis of Activity Data From Smartphones
+                  </div>
+
+                  <div class="project-blurb project-text">
+                    This project is my fourth-year research project at the University of Oxford. The goal of the project is to utilize accelerometers from smartphones and new wearable devices in order to provide tools and support to the medical community. The project is split into two streams: a generalized step-counting algorithm using the accelerometer in a smartphone and a sleep length and quality algorithm using the signals from a wearable device like the Apple Watch.
+                  </div>
+
+                  <div class="collapse project-text" id="aads-text">
+                    <p>Ultimately, these two algorithms should come together to enable a study on the link between day-to-day activity and length and quality of sleep as it relates to poor fitness in general. This could then be extended to an early warning system for conditions like heart failure or as diagnostic support for conditions like chronic obstructive pulmonary disease if a link is proven</p>
+
+                    <p>Both these algorithms should be robust enough to deal with the noisy signals produced by accelerometers, efficient enough to run on mobile devices, and powerful enough to give accurate health markers.</p>
 
 
-          <div class="resume-section-wrapper">
-            <a class="resume-section-header" data-toggle="collapse" href="#analysis_activity" aria-expanded="false" aria-controls="analysis_activity">Analysis of Activity Data From Smartphones
-              <span class="text-right">
-                <i class="fa fa-plus right"></i>
-                <i class="fa fa-minus right"></i>
-              </span>
-            </a>
-            <p class="text-italics">Adventures in real time signal processing!<br>October 2016 - Present</p> 
-            <div class="collapse" id="analysis_activity">
-              <br>
-              <p><strong>Overview</strong></p>
+                    <p><strong>Step Counting Algorithm</strong></p>
 
-              <p>This project is my fourth-year research project at the University of Oxford. The goal of the project is to utilize accelerometers from smartphones and new wearable devices in order to provide tools and support to the medical community. The project is split into two streams: a generalized step-counting algorithm using the accelerometer in a smartphone and a sleep length and quality algorithm using the signals from a wearable device like the Apple Watch.</p>
+                    <p>Counting steps effectively boils down to detecting the peaks of the accelerometer signal, these correspond to the heel strikes of the user. Unfortunately, accelerometer data is very noisy and thus requires some processing before we can do the peak detection. An example of a accelerometer trace with steps can be seen below.</p>
 
-              <p>Ultimately, these two algorithms should come together to enable a study on the link between day-to-day activity and length and quality of sleep as it relates to poor fitness in general. This could then be extended to an early warning system for conditions like heart failure or as diagnostic support for conditions like chronic obstructive pulmonary disease if a link is proven</p>
+                    <img class="img-responsive" src="assets/projects/4yp-noisy-accel-signal.png"/>
 
-              <p>Both these algorithms should be robust enough to deal with the noisy signals produced by accelerometers, efficient enough to run on mobile devices, and powerful enough to give accurate health markers.</p>
+                    <p>There are a number of algorithms for peak detection, these roughly break down into three categories:</p>
+                    <ul>
+                      <li class="list-bullets">Time Based Algorithms</li>
+                      <li class="list-bullets">Frequency Based Algorithms</li>
+                      <li class="list-bullets">Machine Learning or Classification Algorithms</li>
+                    </ul>
 
+                    <p>By examining relevant scientific literature and analyzing the performance and complexity of a set of algorithms, I decided to pursue and test Windowed Peak Detection as the algorithm of choice.</p>
 
-              <p><strong>Step Counting Algorithm</strong></p>
+                    <p>The algorithm was initially written in Python for ease of implementation and testing, however, it will later be translated into Java for use on a mobile device. The algorithm works much as an assembly line does, data flows from stage to stage in queues (or conveyor belts!) where at each stage some sort of work is done on them.</p>
 
-              <p>Counting steps effectively boils down to detecting the peaks of the accelerometer signal, these correspond to the heel strikes of the user. Unfortunately, accelerometer data is very noisy and thus requires some processing before we can do the peak detection. An example of a accelerometer trace with steps can be seen below.</p>
+                    <p>The five stages to the algorithm are as follows:</p>
+                    <ol>
+                      <li>Data Pre-Processing</li>
+                      <li>Data Smoothing</li>
+                      <li>Peak Scoring</li>
+                      <li>Peak Detection</li>
+                      <li>Post Processing</li>
+                    </ol>
 
-              <img class="img-responsive" src="assets/projects/4yp-noisy-accel-signal.png"/>
-
-              <p>There are a number of algorithms for peak detection, these roughly break down into three categories:</p>
-              <ul>
-                <li class="list-bullets">Time Based Algorithms</li>
-                <li class="list-bullets">Frequency Based Algorithms</li>
-                <li class="list-bullets">Machine Learning or Classification Algorithms</li>
-              </ul>
-
-              <p>By examining relevant scientific literature and analyzing the performance and complexity of a set of algorithms, I decided to pursue and test Windowed Peak Detection as the algorithm of choice.</p>
-
-              <p>The algorithm was initially written in Python for ease of implementation and testing, however, it will later be translated into Java for use on a mobile device. The algorithm works much as an assembly line does, data flows from stage to stage in queues (or conveyor belts!) where at each stage some sort of work is done on them.</p>
-
-              <p>The five stages to the algorithm are as follows:</p>
-              <ol>
-                <li>Data Pre-Processing</li>
-                <li>Data Smoothing</li>
-                <li>Peak Scoring</li>
-                <li>Peak Detection</li>
-                <li>Post Processing</li>
-              </ol>
-
-              <p>A detailed description of each of these stages can be found on my blog.</p>
+                    <p>A detailed description of each of these stages can be found on my blog.</p>
 
 
-              <p><strong>Step Counter Validation</strong></p>
+                    <p><strong>Step Counter Validation</strong></p>
 
-              <p>To validate the algorithm's performance, we need collect some ground truth data along with the accelerometer data. This means that we need an accurate count of how many steps were had in each trace. To this end a device has been designed to capture the timestamps and count of the user's steps during the trace.</p>
+                    <p>To validate the algorithm's performance, we need collect some ground truth data along with the accelerometer data. This means that we need an accurate count of how many steps were had in each trace. To this end a device has been designed to capture the timestamps and count of the user's steps during the trace.</p>
 
-              <p>A Bluetooth LowEnergy enabled Arduino board is used as the control center for this operation. The initial device design used push buttons strapped to the bottom of the user's shoes to record steps. However, this device proved to be too fragile for extended use and had problems recording data on certain surfaces.</p>
+                    <p>A Bluetooth LowEnergy enabled Arduino board is used as the control center for this operation. The initial device design used push buttons strapped to the bottom of the user's shoes to record steps. However, this device proved to be too fragile for extended use and had problems recording data on certain surfaces.</p>
 
-              <img class="img-responsive" src="assets/projects/4yp-og-device.jpg"/>
+                    <img class="img-responsive" src="assets/projects/4yp-og-device.jpg"/>
 
-              <p>In order to improve the device, the design was swapped to use velostat as a pressure sensor on the sole of the shoe instead, and use thresholding to determine a step. This device worked much better in practice with regards to robustness and variety of surfaces.</p>
+                    <p>In order to improve the device, the design was swapped to use velostat as a pressure sensor on the sole of the shoe instead, and use thresholding to determine a step. This device worked much better in practice with regards to robustness and variety of surfaces.</p>
 
-              <img class="img-responsive" src="assets/projects/4yp-new-device.jpg"/>
-
-
-              <p><strong>Step Counter Parameter Selection</strong></p>
-
-              <p>The algorithm is heavily parameterized and each stage has a few implementation choices. To decide upon the best combination of parameters and implementation, I needed to exhaustively search the parameter space for the optimal set.</p>
-
-              <p>This would happen in two stages, first a rough search to zone in on areas of high potential, and then a finer search in those areas to yield the close to optimal parameter set.</p>
-
-              <p>Suddenly, we had a computational problem on our hands. In total, there are just over 3000 permutations of parameters for the algorithm. If we want to test every single one of these over a sufficiently large set of data, this would take a long time on a single machine.</p>
-
-              <p>The clear solution was to distribute the load.</p>
-
-              <p>The architecture of the set-up is to have a web server used as a distribution and collection center where workers could get their next set of parameters and return the results. Then we can have any number of worker-clients connect to this web server and run through the algorithm.</p>
-
-              <p>A small web application was developed Python using the Flask framework that provides data in the form of JSON to the worker-client. Google Cloud Compute will be used to spin up 'N' number of workers.</p>
-
-              <p>The full parameter search has not been undergone at the time of writing, a more complete data set is necessary before optimization can occur</p>
+                    <img class="img-responsive" src="assets/projects/4yp-new-device.jpg"/>
 
 
-              <p><strong>Sleep Onset and Fragmentation Detector</strong></p>
+                    <p><strong>Step Counter Parameter Selection</strong></p>
 
-              <p>This part of the project is still in the research phase. However, check back here for regular updates as development gets underway</p>
+                    <p>The algorithm is heavily parameterized and each stage has a few implementation choices. To decide upon the best combination of parameters and implementation, I needed to exhaustively search the parameter space for the optimal set.</p>
+
+                    <p>This would happen in two stages, first a rough search to zone in on areas of high potential, and then a finer search in those areas to yield the close to optimal parameter set.</p>
+
+                    <p>Suddenly, we had a computational problem on our hands. In total, there are just over 3000 permutations of parameters for the algorithm. If we want to test every single one of these over a sufficiently large set of data, this would take a long time on a single machine.</p>
+
+                    <p>The clear solution was to distribute the load.</p>
+
+                    <p>The architecture of the set-up is to have a web server used as a distribution and collection center where workers could get their next set of parameters and return the results. Then we can have any number of worker-clients connect to this web server and run through the algorithm.</p>
+
+                    <p>A small web application was developed Python using the Flask framework that provides data in the form of JSON to the worker-client. Google Cloud Compute will be used to spin up 'N' number of workers.</p>
+
+                    <p>The full parameter search has not been undergone at the time of writing, a more complete data set is necessary before optimization can occur</p>
+
+
+                    <p><strong>Sleep Onset and Fragmentation Detector</strong></p>
+
+                    <p>This part of the project is still in the research phase. However, check back here for regular updates as development gets underway</p>
+                  </div>
+                </div>
+
+                <div class="project-footer">
+                  <div class="project-icon-circle">
+                    <a class="project-expandable" data-toggle="collapse" href="#aads-text" aria-expanded="false" aria-controls="aads-text">
+                      <i class="fa fa-chevron-down"></i>
+                      <i class="fa fa-chevron-up"></i>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="project">
+              <div>
+                <img class="project-image" src="assets/projects/3yp_image_header.png"
+              </div>
+
+              <div class="project-body">
+                <div class="project-title">
+                  Optical Nanofabrication Facility
+                </div>
+
+                <div class="project-blurb project-text">
+                  This project is my third-year group design project at the University of Oxford. The goal of the project was broad: design an optical nano-fabrication facility that could be used for a variety of applications. I worked mainly on the software and control aspects of the project.
+                </div>
+
+                <div class="collapse project-text" id="onf-text">
+                  <p>This broadly broke down into 3 main areas of focus: Fabrication, Imaging, and Control/Software.</p>
+
+                  <p>I initially did some research into a fabrication technique called stereolithography. This technique involves using the energy of a laser to polymerize liquid resin into a solid structure. This is a common technique used in 3-D printers that has been around since the 1970s. We decided to include this technique as a large scale first stage fabrication. The idea being, that you would fabricate large macro-structures with stereolithography and then do smaller, finer details with another technique like 2-photon polyermization or STED lithography.</p>
+
+                  <p>After the selection of the techniques were complete, I pivoted to the software side and started to develop a small software suite to accompany the facility to allow users to easily fabricate objects. The main goal of this software suite was to convert a 3-D object model (in .stl format) into a series of instructions for the control system to follow to fabricate the objects.</p>
+
+                  <p>Since this was a design exercise rather than a build exercise I focused mainly on breaking down the 3-D object into build lines for the fabrication to follow (since the fabrication process was layered). The switching between techniques, loading of material, etc was assumed.</p>
+
+                  <p>This process consists of three main stages:</p>
+                  <ul>
+                    <li class="list-bullets">Object Slicing</li>
+                    <li class="list-bullets">Resolution Separation</li>
+                    <li class="list-bullets">Laser Path Generation</li>
+                  </ul>
+
+                  <p><strong>Object Slicing</strong></p>
+
+                  <p>This stage of the process is designed to split the 3-D model object into discrete slices corresponding to the fabrication layers. In effect, this is taking the 3-D object file and repeatedly calculating the intersection between the object and a plane.</p>
+
+                  <p>The main challenge is that th 3-D object file is tesselated, that is to say, it is described by a triangular surface mesh. So for each plane, we must calculate the intersection points of each triangle with the plane. This is relatively expensive, although some optimizations can be made with height bounding to cut down the search space.</p>
+
+                  <p>After the set of intersection points was calculated, the points had to be interpolated together. Each intersection with a triangle yielded a line segment, so it was stiching together the line segments in order. Note that sometimes we had more than one closed contour for each slice, so we have a set of contours describing the intersection.</p>
+
+                  <p>The final part of the process was to indicate whether a given contour was defining an outer edge or an inner edge. This was done in relative fashion, noting that if any point of a contour lies inside another, then we known that contour is fully inside.</p>
+
+                  <p>At the end of the process, we have a sets of contours describing the intersection for each layer, with each contour classified as inner or outer. An example of a sliced R2-D2 model is shown below, with the layers reconstructed into the full object. Blue contours indicate outer contours, red contours indicate inner contours.</p>
+
+                  <img class="img-responsive" src="assets/projects/3yp-sliced-model.png"/>
+
+                  <p><strong>Resolution Separation</strong></p>
+
+                  <p>The next stage in the process was to take each layer and separate the areas of fabrication into high-resolution and low-resolution. The main insight here is to recognize that all the high resolution data is near the edge of the model, the interior can be considered as a large contiguous box of low-resolution area.</p>
+
+                  <p>So now the problem becomes much more simple, we merely need to define a boundary that is some distance 'inward' from the edge (inward here meaning toward the object vs empty space) and smooth this boundary out. Luckily, the action of moving the edge inward will actually smooth out the edge too! So we shrink outer contours and expand inner contours and resolve any conflicts in the new boundaries.</p>
+
+                  <p>This is a very simple way of separating resolutions as demonstrated below with a 3-D printer test object.</p>
+
+                  <img class="img-responsive" src="assets/projects/3yp-res-sep.png"/>
+
+                  <p><strong>Laser Path Generation</strong></p>
+
+                  <p>The final stage in the process is to generate the laser paths for each process for each layer. This is quite simple to do, simply create a line across the layer in some direction, calculate the intersection points, then shift the line in a perpendicular direction and repeat. This gives a set of paths to follow that should result in the laser paths assuming a certain polyermization width.</p>
+
+                  <p>An example of this is shown below with the 3-D printer test object. Note that the red areas are actually lines of very high density.</p>
+
+                  <img class="img-responsive" src="assets/projects/3yp-path-gen.png"/>
+                </div>
+              </div>
+
+              <div class="project-footer">
+                <div class="project-icon-circle">
+                  <a class="project-expandable" data-toggle="collapse" href="#onf-text" aria-expanded="false" aria-controls="onf-text">
+                    <i class="fa fa-chevron-down"></i>
+                    <i class="fa fa-chevron-up"></i>
+                  </a>
+                </div>
+              </div>
 
             </div>
           </div>
-          <div class="resume-break"></div>
-
-
-          <div class="resume-section-wrapper">
-            <a class="resume-section-header" data-toggle="collapse" href="#optical_fab" aria-expanded="false" aria-controls="optical_fab">
-              Optical Nanofabrication Facility
-              <span class="text-right">
-                <i class="fa fa-plus right"></i>
-                <i class="fa fa-minus right"></i>
-              </span>
-            </a>
-            <p class="text-italics">Fabrication beyond the capabilities of the human eye!<br>October 2015 - June 2016</p>
-            <div class="collapse" id="optical_fab">
-              <br>
-              <p><strong>Overview</strong></p>
-
-              <p>This project is my third-year group design project at the University of Oxford. The goal of the project was broad: design an optical nano-fabrication facility that could be used for a variety of applications.</p>
-
-              <p>This broadly broke down into 3 main areas of focus: Fabrication, Imaging, and Control/Software.</p>
-
-              <p>I initially did some research into a fabrication technique called stereolithography. This technique involves using the energy of a laser to polymerize liquid resin into a solid structure. This is a common technique used in 3-D printers that has been around since the 1970s. We decided to include this technique as a large scale first stage fabrication. The idea being, that you would fabricate large macro-structures with stereolithography and then do smaller, finer details with another technique like 2-photon polyermization or STED lithography.</p>
-
-              <p>After the selection of the techniques were complete, I pivoted to the software side and started to develop a small software suite to accompany the facility to allow users to easily fabricate objects. The main goal of this software suite was to convert a 3-D object model (in .stl format) into a series of instructions for the control system to follow to fabricate the objects.</p>
-
-              <p>Since this was a design exercise rather than a build exercise I focused mainly on breaking down the 3-D object into build lines for the fabrication to follow (since the fabrication process was layered). The switching between techniques, loading of material, etc was assumed.</p>
-
-              <p>This process consists of three main stages:</p>
-              <ul>
-                <li class="list-bullets">Object Slicing</li>
-                <li class="list-bullets">Resolution Separation</li>
-                <li class="list-bullets">Laser Path Generation</li>
-              </ul>
-
-              <p><strong>Object Slicing</strong></p>
-
-              <p>This stage of the process is designed to split the 3-D model object into discrete slices corresponding to the fabrication layers. In effect, this is taking the 3-D object file and repeatedly calculating the intersection between the object and a plane.</p>
-
-              <p>The main challenge is that th 3-D object file is tesselated, that is to say, it is described by a triangular surface mesh. So for each plane, we must calculate the intersection points of each triangle with the plane. This is relatively expensive, although some optimizations can be made with height bounding to cut down the search space.</p>
-
-              <p>After the set of intersection points was calculated, the points had to be interpolated together. Each intersection with a triangle yielded a line segment, so it was stiching together the line segments in order. Note that sometimes we had more than one closed contour for each slice, so we have a set of contours describing the intersection.</p>
-
-              <p>The final part of the process was to indicate whether a given contour was defining an outer edge or an inner edge. This was done in relative fashion, noting that if any point of a contour lies inside another, then we known that contour is fully inside.</p>
-
-              <p>At the end of the process, we have a sets of contours describing the intersection for each layer, with each contour classified as inner or outer. An example of a sliced R2-D2 model is shown below, with the layers reconstructed into the full object. Blue contours indicate outer contours, red contours indicate inner contours.</p>
-
-              <img class="img-responsive" src="assets/projects/3yp-sliced-model.png"/>
-
-              <p><strong>Resolution Separation</strong></p>
-
-              <p>The next stage in the process was to take each layer and separate the areas of fabrication into high-resolution and low-resolution. The main insight here is to recognize that all the high resolution data is near the edge of the model, the interior can be considered as a large contiguous box of low-resolution area.</p>
-
-              <p>So now the problem becomes much more simple, we merely need to define a boundary that is some distance 'inward' from the edge (inward here meaning toward the object vs empty space) and smooth this boundary out. Luckily, the action of moving the edge inward will actually smooth out the edge too! So we shrink outer contours and expand inner contours and resolve any conflicts in the new boundaries.</p>
-
-              <p>This is a very simple way of separating resolutions as demonstrated below with a 3-D printer test object.</p>
-
-              <img class="img-responsive" src="assets/projects/3yp-res-sep.png"/>
-
-              <p><strong>Laser Path Generation</strong></p>
-
-              <p>The final stage in the process is to generate the laser paths for each process for each layer. This is quite simple to do, simply create a line across the layer in some direction, calculate the intersection points, then shift the line in a perpendicular direction and repeat. This gives a set of paths to follow that should result in the laser paths assuming a certain polyermization width.</p>
-
-              <p>An example of this is shown below with the 3-D printer test object. Note that the red areas are actually lines of very high density.</p>
-
-              <img class="img-responsive" src="assets/projects/3yp-path-gen.png"/>
-
-            </div>
-          </div>
-          <div class="resume-break"></div>
-
         </div>
 
       </div>
 
     </div>
 
-
-    <!-- SCRIPTS -->
-
-    <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/tether.min.js"></script>
-
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-
-    <script type="text/javascript" src="js/scripts.js"></script>
+  </div>
+</div>
 
 
-  </body>
+<!-- SCRIPTS -->
+
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/tether.min.js"></script>
+
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+
+<script type="text/javascript" src="js/scripts.js"></script>
+
+
+</body>
