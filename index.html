@@ -389,7 +389,7 @@
 
                     <p>Counting steps effectively boils down to detecting the peaks of the accelerometer signal, these correspond to the heel strikes of the user. Unfortunately, accelerometer data is very noisy and thus requires some processing before we can do the peak detection. An example of a accelerometer trace with steps can be seen below.</p>
 
-                    <img class="img-responsive" src="assets/projects/4yp-noisy-accel-signal.png"/>
+                    <img class="img-responsive project-image-body" src="assets/projects/4yp-noisy-accel-signal.png"/>
 
                     <p>There are a number of algorithms for peak detection, these roughly break down into three categories:</p>
                     <ul>
@@ -411,6 +411,8 @@
                       <li>Post Processing</li>
                     </ol>
 
+                    <img class="img-responsive project-image-body" src="assets/projects/4yp-sc-block.png"/>
+
                     <p>A detailed description of each of these stages can be found on my blog.</p>
 
 
@@ -420,11 +422,11 @@
 
                     <p>A Bluetooth LowEnergy enabled Arduino board is used as the control center for this operation. The initial device design used push buttons strapped to the bottom of the user's shoes to record steps. However, this device proved to be too fragile for extended use and had problems recording data on certain surfaces.</p>
 
-                    <img class="img-responsive" src="assets/projects/4yp-og-device.jpg"/>
+                    <img class="img-responsive project-image-body" src="assets/projects/4yp-og-device.jpg"/>
 
                     <p>In order to improve the device, the design was swapped to use velostat as a pressure sensor on the sole of the shoe instead, and use thresholding to determine a step. This device worked much better in practice with regards to robustness and variety of surfaces.</p>
 
-                    <img class="img-responsive" src="assets/projects/4yp-new-device.jpg"/>
+                    <img class="img-responsive project-image-body" src="assets/projects/4yp-new-device.jpg"/>
 
 
                     <p><strong>Step Counter Parameter Selection</strong></p>

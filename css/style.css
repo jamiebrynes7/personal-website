@@ -470,6 +470,11 @@ h1 {
 	background-color: rgba(0,0,0,0.2);
 }
 
+.project-image-body {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
 .footer {
 	background-color: #fff;
 	padding: 10px 0 10px 0;
