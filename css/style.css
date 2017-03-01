@@ -475,6 +475,15 @@ h1 {
 	margin-bottom: 30px;
 }
 
+.project-date {
+	color: #878787;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.1;
+	text-transform: uppercase;
+	text-align: center;
+}
+
 .footer {
 	background-color: #fff;
 	padding: 10px 0 10px 0;
