@@ -268,7 +268,7 @@
                 </div>  
               </div>
             </div>
-          </div>
+          </div>  
 
           <!-- Honors and Awards -->
           <h2 class="section-title center">Honors & Awards</h2>
@@ -380,9 +380,9 @@
                 <div class="project-body">
                   <div class="project-title">
                     Analysis of Activity Data From Smartphones
-                    <br><span class="project-date">Oct 2016 - Present</span>
+                    <br><span class="project-date">Oct 2016 - May 2017</span>
+                    <br><a href="docs/4yp_report.pdf"><span class="project-download">Download Report <i class="fa fa-download"></i></span></a>
                   </div>
-
                   <div class="project-blurb project-text">
                     This project is my fourth-year research project at the University of Oxford. The goal of the project is to utilize accelerometers from smartphones and new wearable devices in order to provide tools and support to the medical community. The project is split into two streams: a generalized step-counting algorithm using the accelerometer in a smartphone and a sleep length and quality algorithm using the signals from a wearable device like the Apple Watch.
                   </div>
@@ -421,9 +421,6 @@
 
                     <img class="img-responsive project-image-body" src="assets/projects/4yp-sc-block.png"/>
 
-                    <p>A detailed description of each of these stages can be found on my blog.</p>
-
-
                     <p><strong>Step Counter Validation</strong></p>
 
                     <p>To validate the algorithm's performance, we need collect some ground truth data along with the accelerometer data. This means that we need an accurate count of how many steps were had in each trace. To this end a device has been designed to capture the timestamps and count of the user's steps during the trace.</p>
@@ -451,12 +448,20 @@
 
                     <p>A small web application was developed Python using the Flask framework that provides data in the form of JSON to the worker-client. Google Cloud Compute will be used to spin up 'N' number of workers.</p>
 
-                    <p>The full parameter search has not been undergone at the time of writing, a more complete data set is necessary before optimization can occur</p>
+                    <p>The exhaustive grid parameter search was executed using the framework briefly described above. This gave us a database of results to query for sets of interesting results. A generalized set of parameters was extracted that gave an overall median accuracy of 96.8%. Additionally, sets of parameters for specific scenarios like holding the phone in hand or putting the phone in a front pocket were extracted that gave even greater accuracies.</p>
 
 
                     <p><strong>Sleep Onset and Fragmentation Detector</strong></p>
 
-                    <p>This part of the project is still in the research phase. However, check back here for regular updates as development gets underway</p>
+                    <p>This part of the project uses the data from a wrist mounted accelerometer in an attempt to discern sleep states during the night. The basis of the algorithm relies on the fact that the level of activity of a person can be determined from the magnitude of the standard deviation or the energy of the accelerometer signal. If there is no movement, the standard deviation will simply be the square root of the variance of the noise in the accelerometer sensor data (assumed to be zero-mean Gaussian). If there is a high level of movement, then there will be a high standard deviation from the mean signal. If there is a long period of low activity then this period will be defined as corresponding to sleep time. This set of rules and inferences will be the guiding principles upon which the algorithm is built.</p>
+
+                    <p>The algorithm development and testing described relies on a database created by Borazio et al. at TU Darmstadt. The database contains accelerometer data from 42 patients, their clinically annotated polysomnography results, and light sensor data from overnight stays in a sleep lab. The patient undergoing polysomnography in a sleep lab has their electroencephalogram, oxygen levels in the blood, heart rate, breathing, eye movement, and leg movement recorded. A trained professional, then produces a report summarising the transitions between sleep stages (deep sleep, Rapid Eye Movement (REM), awake) during the night. The accelerometer data in the Darmstadt database comes from a custom device that is mounted on the wrist of the patient. The data is logged at 100Hz. The data collected by Borazio et al. was collected from 42 sleeping lab patients aged between 28 and 86 years old. These patients were suffering from a variety of sleeping disorders, later diagnosed as primarily sleep apnea syndrome (SAS), restless leg syndrome (RLS), or narcolepsy. In total, 45 nights of data were collected, with three patients providing 2 nights' worth of data.</p>
+
+                    <p>The algorithm had two primary stages: classification via logisitic regression and then a hard-limiter filtering operation. The classification stage simply takes the standard deviation of a local region around a given point in time and predicts whether the user is awake or asleep. The hard-limiter again takes a window around the point and calculates a weighted average score for the point. If this score is above a certain threshold, then the point is classified as asleep.</p>
+
+                    <img class="img-responsive project-image-body" src="assets/projects/4yp-sleep-detection.PNG"/>
+
+                    <p>Compared to literature, this methodology scored roughly 10% higher in the Total Time Asleep metric. This metric measures the total time asleep during one night's sleep. However, as can be seen above, the algorithm is still rough and incorrectly classifies many periods of time during the night. This is due to the fact that entirely accelerometry-based methods are insufficient for accurate sleep detection. In order to increase the precision of these methods, more features will need to be introduced to the feature vector that correlate with sleep. The algorithm is built so that including new elements is quite simple.</p>
                   </div>
                 </div>
 
@@ -481,6 +486,7 @@
                 <div class="project-title">
                   Optical Nanofabrication Facility
                   <br><span class="project-date">Oct 2015 - May 2016</span>
+                  <br><a href="docs/3yp_report.pdf"><span class="project-download">Download Report <i class="fa fa-download"></i></span></a>                  
                 </div>
 
                 <div class="project-blurb project-text">
